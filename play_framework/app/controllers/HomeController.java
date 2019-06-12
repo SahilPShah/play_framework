@@ -30,8 +30,8 @@ public class HomeController extends Controller {
         return ok(views.html.explore.render());
     }
 
-    public Result tutorial() {
-        return ok(views.html.tutorial.render());
+    public Result connectFourUpdate() {
+        return ok(views.html.update.render("SHOW NEW BOARD"));
     }
 
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Wed Jun 12 16:04:47 CDT 2019
+// @DATE:Wed Jun 12 16:22:16 CDT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,27 +19,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:8
-    def tutorial: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.tutorial",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tutorial"})
-        }
-      """
-    )
-  
-    // @LINE:15
+    // @LINE:14
     def connectFourReset: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.connectFourReset",
       """
         function() {
-          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "api/v1/connect-four"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "api/v1/connect-four"})
         }
       """
     )
   
-    // @LINE:9
+    // @LINE:8
     def connectFour: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.connectFour",
       """
@@ -59,6 +49,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:17
+    def connectFourUpdate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.connectFourUpdate",
+      """
+        function() {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "api/v1/connect-four"})
+        }
+      """
+    )
+  
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.index",
@@ -71,7 +71,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:12
+  // @LINE:11
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -79,7 +79,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:11
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
