@@ -12,4 +12,8 @@ GET    /api/v1/connect-four                 controllers.HomeController.connectFo
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 
+DELETE /api/v1/connect-four                 controllers.HomeController.connectFourReset
+
+
+
 

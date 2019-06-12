@@ -15,17 +15,21 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(views.html.test.render("Hello World"));
+        return ok(views.html.index.render());
     }
 
     public Result connectFour(){
         return ok(views.html.connectFour.render("CONNECT FOUR MAIN"));
     }
-    
+
+    public Result connectFourReset(){
+        return ok(views.html.connectFour.render("SHOW NEW BOARD"));
+    }
+
     public Result explore() {
         return ok(views.html.explore.render());
     }
-    
+
     public Result tutorial() {
         return ok(views.html.tutorial.render());
     }

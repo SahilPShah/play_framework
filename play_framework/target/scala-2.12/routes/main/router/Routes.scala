@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Wed Jun 12 15:43:05 CDT 2019
+// @DATE:Wed Jun 12 16:04:47 CDT 2019
 
 package router
 
@@ -45,6 +45,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tutorial""", """controllers.HomeController.tutorial"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFour"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
+    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFourReset"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -142,6 +143,24 @@ class Routes(
     )
   )
 
+  // @LINE:15
+  private[this] lazy val controllers_HomeController_connectFourReset5_route = Route("DELETE",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/v1/connect-four")))
+  )
+  private[this] lazy val controllers_HomeController_connectFourReset5_invoker = createInvoker(
+    HomeController_1.connectFourReset,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "connectFourReset",
+      Nil,
+      "DELETE",
+      this.prefix + """api/v1/connect-four""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -173,6 +192,12 @@ class Routes(
     case controllers_Assets_versioned4_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned4_invoker.call(Assets_0.versioned(path, file))
+      }
+  
+    // @LINE:15
+    case controllers_HomeController_connectFourReset5_route(params@_) =>
+      call { 
+        controllers_HomeController_connectFourReset5_invoker.call(HomeController_1.connectFourReset)
       }
   }
 }

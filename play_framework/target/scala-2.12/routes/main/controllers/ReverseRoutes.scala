@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Wed Jun 12 15:43:05 CDT 2019
+// @DATE:Wed Jun 12 16:04:47 CDT 2019
 
 import play.api.mvc.Call
 
@@ -18,10 +18,16 @@ package controllers {
     }
 
   
-    // @LINE:6
-    def index(): Call = {
+    // @LINE:8
+    def tutorial(): Call = {
       
-      Call("GET", _prefix)
+      Call("GET", _prefix + { _defaultPrefix } + "tutorial")
+    }
+  
+    // @LINE:15
+    def connectFourReset(): Call = {
+      
+      Call("DELETE", _prefix + { _defaultPrefix } + "api/v1/connect-four")
     }
   
     // @LINE:9
@@ -30,16 +36,16 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "api/v1/connect-four")
     }
   
-    // @LINE:8
-    def tutorial(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "tutorial")
-    }
-  
     // @LINE:7
     def explore(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "explore")
+    }
+  
+    // @LINE:6
+    def index(): Call = {
+      
+      Call("GET", _prefix)
     }
   
   }
