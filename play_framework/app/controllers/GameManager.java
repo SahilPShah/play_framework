@@ -61,6 +61,7 @@ public class GameManager{
         c4.makeMove(4);
         c4.makeMove(5);
         c4.makeMove(6);
+
         int j = c4.makeMove(0);
         c4.printBoard();
         System.out.println(j);
