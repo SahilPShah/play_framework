@@ -27,7 +27,8 @@ public class HomeController extends Controller {
     }
 
     public Result connectFourUpdate() {
-        return ok(views.html.update.render("SHOW NEW BOARD"));
+        return ok(views.html.update.render("UPDATE"));
     }
 
 }
+

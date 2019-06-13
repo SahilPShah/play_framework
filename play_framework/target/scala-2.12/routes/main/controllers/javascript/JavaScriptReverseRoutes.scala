@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Thu Jun 13 09:38:48 CDT 2019
+// @DATE:Thu Jun 13 09:55:10 CDT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -33,8 +33,8 @@ package controllers.javascript {
     def connectFourUpdate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.connectFourUpdate",
       """
-        function() {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "api/v1/connect-four"})
+        function(index0) {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "api/v1/connect-four{index}" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("index", index0)])})
         }
       """
     )

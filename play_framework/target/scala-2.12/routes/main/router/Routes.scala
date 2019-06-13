@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Thu Jun 13 09:38:48 CDT 2019
+// @DATE:Thu Jun 13 09:55:10 CDT 2019
 
 package router
 
@@ -44,7 +44,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFour"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFourReset"""),
-    ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFourUpdate"""),
+    ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four{index}""", """controllers.HomeController.connectFourUpdate(index:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -126,17 +126,17 @@ class Routes(
 
   // @LINE:16
   private[this] lazy val controllers_HomeController_connectFourUpdate4_route = Route("PUT",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/v1/connect-four")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/v1/connect-four{index}")))
   )
   private[this] lazy val controllers_HomeController_connectFourUpdate4_invoker = createInvoker(
-    HomeController_1.connectFourUpdate,
+    HomeController_1.connectFourUpdate(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "connectFourUpdate",
-      Nil,
+      Seq(classOf[String]),
       "PUT",
-      this.prefix + """api/v1/connect-four""",
+      this.prefix + """api/v1/connect-four{index}""",
       """""",
       Seq()
     )
@@ -171,8 +171,8 @@ class Routes(
   
     // @LINE:16
     case controllers_HomeController_connectFourUpdate4_route(params@_) =>
-      call { 
-        controllers_HomeController_connectFourUpdate4_invoker.call(HomeController_1.connectFourUpdate)
+      call(params.fromQuery[String]("index", None)) { (index) =>
+        controllers_HomeController_connectFourUpdate4_invoker.call(HomeController_1.connectFourUpdate(index))
       }
   }
 }

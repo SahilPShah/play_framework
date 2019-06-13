@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Thu Jun 13 09:38:48 CDT 2019
+// @DATE:Thu Jun 13 09:55:10 CDT 2019
 
 import play.api.mvc.Call
 
@@ -25,9 +25,9 @@ package controllers {
     }
   
     // @LINE:16
-    def connectFourUpdate(): Call = {
+    def connectFourUpdate(index:String): Call = {
       
-      Call("PUT", _prefix + { _defaultPrefix } + "api/v1/connect-four")
+      Call("PUT", _prefix + { _defaultPrefix } + "api/v1/connect-four{index}" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("index", index)))))
     }
   
     // @LINE:6
