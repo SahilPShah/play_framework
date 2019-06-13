@@ -104,41 +104,42 @@
 
 <script>
     var dots = document.getElementsByClassName("dot");
+    var rv;
 
     function col0()
     {
-        dots[0].style.backgroundColor = 'red';
+        rv = {"col": 0}
     }
     function col1()
     {
-        dots[1].style.backgroundColor = 'red';
+        rv = {"col": 1}
     }
     function col2()
     {
-        dots[2].style.backgroundColor = 'red';
+        rv = {"col": 2}
     }
     function col3()
     {
-        dots[3].style.backgroundColor = 'red';
+        rv = {"col": 3}
     }
     function col4()
     {
-        dots[4].style.backgroundColor = 'red';
+        rv = {"col": 4}
     }
     function col5()
     {
-        dots[5].style.backgroundColor = 'red';
+        rv = {"col": 5}
     }
     function col6()
     {
-        dots[6].style.backgroundColor = 'red';
+        rv = {"col": 6}
     }
 
-    function playChecker(row, col, isPlayerOne)
+    function playChecker(playerData)
     {
-        var index = row * 7 + col;
+        var index = playerData.row * 7 + playerData.col;
 
-        if(isPlayerOne)
+        if(playerData.isPlayerOne)
         {
             dots[index].style.backgroundColor = 'red';
         }
