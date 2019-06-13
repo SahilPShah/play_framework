@@ -4,7 +4,6 @@
 
 # An example controller showing a sample home page
 GET     /                                   controllers.HomeController.index
-GET    /explore                             controllers.HomeController.explore
 GET    /api/v1/connect-four                 controllers.HomeController.connectFour
 
 # Map static resources from the /public folder to the /assets URL path

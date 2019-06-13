@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Wed Jun 12 16:22:16 CDT 2019
+// @DATE:Thu Jun 13 09:38:48 CDT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:13
     def connectFourReset: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.connectFourReset",
       """
@@ -29,27 +29,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:8
-    def connectFour: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.connectFour",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/v1/connect-four"})
-        }
-      """
-    )
-  
-    // @LINE:7
-    def explore: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.explore",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "explore"})
-        }
-      """
-    )
-  
-    // @LINE:17
+    // @LINE:16
     def connectFourUpdate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.connectFourUpdate",
       """
@@ -69,9 +49,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:7
+    def connectFour: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.connectFour",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/v1/connect-four"})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:11
+  // @LINE:10
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -79,7 +69,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:11
+    // @LINE:10
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

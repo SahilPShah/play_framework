@@ -26,10 +26,6 @@ public class HomeController extends Controller {
         return ok(views.html.connectFour.render("SHOW NEW BOARD"));
     }
 
-    public Result explore() {
-        return ok(views.html.explore.render());
-    }
-
     public Result connectFourUpdate() {
         return ok(views.html.update.render("SHOW NEW BOARD"));
     }
