@@ -1,3 +1,5 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\sahil.shah\Desktop\play_framework\play_framework\conf\routes:15:1: value reset is not a member of controllers.HomeController[0m
-[0m[[0m[31merror[0m] [0m[0mDELETE /api/v1/connect-four                 controllers.HomeController.reset[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\sahil.shah\Desktop\play_framework\play_framework\conf\routes:16:1: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : String[0m
+[0m[[0m[31merror[0m] [0m[0m required: Int[0m
+[0m[[0m[31merror[0m] [0m[0mPUT /api/v1/connect-four{index}                   controllers.HomeController.connectFourUpdate(index)[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
