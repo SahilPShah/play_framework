@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Wed Jun 12 16:04:47 CDT 2019
+// @DATE:Thu Jun 13 09:38:48 CDT 2019
 
 package router
 
@@ -16,7 +16,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   HomeController_1: controllers.HomeController,
-  // @LINE:12
+  // @LINE:10
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -25,7 +25,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     HomeController_1: controllers.HomeController,
-    // @LINE:12
+    // @LINE:10
     Assets_0: controllers.Assets
   ) = this(errorHandler, HomeController_1, Assets_0, "/")
 
@@ -41,11 +41,10 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """explore""", """controllers.HomeController.explore"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tutorial""", """controllers.HomeController.tutorial"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFour"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
-    ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFourReset"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFourReset"""),
+    ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/v1/connect-four""", """controllers.HomeController.connectFourUpdate"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -72,46 +71,10 @@ class Routes(
   )
 
   // @LINE:7
-  private[this] lazy val controllers_HomeController_explore1_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("explore")))
-  )
-  private[this] lazy val controllers_HomeController_explore1_invoker = createInvoker(
-    HomeController_1.explore,
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.HomeController",
-      "explore",
-      Nil,
-      "GET",
-      this.prefix + """explore""",
-      """""",
-      Seq()
-    )
-  )
-
-  // @LINE:8
-  private[this] lazy val controllers_HomeController_tutorial2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tutorial")))
-  )
-  private[this] lazy val controllers_HomeController_tutorial2_invoker = createInvoker(
-    HomeController_1.tutorial,
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.HomeController",
-      "tutorial",
-      Nil,
-      "GET",
-      this.prefix + """tutorial""",
-      """""",
-      Seq()
-    )
-  )
-
-  // @LINE:9
-  private[this] lazy val controllers_HomeController_connectFour3_route = Route("GET",
+  private[this] lazy val controllers_HomeController_connectFour1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/v1/connect-four")))
   )
-  private[this] lazy val controllers_HomeController_connectFour3_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_connectFour1_invoker = createInvoker(
     HomeController_1.connectFour,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -125,11 +88,11 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
+  // @LINE:10
+  private[this] lazy val controllers_Assets_versioned2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned2_invoker = createInvoker(
     Assets_0.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -143,18 +106,36 @@ class Routes(
     )
   )
 
-  // @LINE:15
-  private[this] lazy val controllers_HomeController_connectFourReset5_route = Route("DELETE",
+  // @LINE:13
+  private[this] lazy val controllers_HomeController_connectFourReset3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/v1/connect-four")))
   )
-  private[this] lazy val controllers_HomeController_connectFourReset5_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_connectFourReset3_invoker = createInvoker(
     HomeController_1.connectFourReset,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "connectFourReset",
       Nil,
-      "DELETE",
+      "POST",
+      this.prefix + """api/v1/connect-four""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_HomeController_connectFourUpdate4_route = Route("PUT",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/v1/connect-four")))
+  )
+  private[this] lazy val controllers_HomeController_connectFourUpdate4_invoker = createInvoker(
+    HomeController_1.connectFourUpdate,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "connectFourUpdate",
+      Nil,
+      "PUT",
       this.prefix + """api/v1/connect-four""",
       """""",
       Seq()
@@ -171,33 +152,27 @@ class Routes(
       }
   
     // @LINE:7
-    case controllers_HomeController_explore1_route(params@_) =>
+    case controllers_HomeController_connectFour1_route(params@_) =>
       call { 
-        controllers_HomeController_explore1_invoker.call(HomeController_1.explore)
+        controllers_HomeController_connectFour1_invoker.call(HomeController_1.connectFour)
       }
   
-    // @LINE:8
-    case controllers_HomeController_tutorial2_route(params@_) =>
-      call { 
-        controllers_HomeController_tutorial2_invoker.call(HomeController_1.tutorial)
-      }
-  
-    // @LINE:9
-    case controllers_HomeController_connectFour3_route(params@_) =>
-      call { 
-        controllers_HomeController_connectFour3_invoker.call(HomeController_1.connectFour)
-      }
-  
-    // @LINE:12
-    case controllers_Assets_versioned4_route(params@_) =>
+    // @LINE:10
+    case controllers_Assets_versioned2_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned4_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned2_invoker.call(Assets_0.versioned(path, file))
       }
   
-    // @LINE:15
-    case controllers_HomeController_connectFourReset5_route(params@_) =>
+    // @LINE:13
+    case controllers_HomeController_connectFourReset3_route(params@_) =>
       call { 
-        controllers_HomeController_connectFourReset5_invoker.call(HomeController_1.connectFourReset)
+        controllers_HomeController_connectFourReset3_invoker.call(HomeController_1.connectFourReset)
+      }
+  
+    // @LINE:16
+    case controllers_HomeController_connectFourUpdate4_route(params@_) =>
+      call { 
+        controllers_HomeController_connectFourUpdate4_invoker.call(HomeController_1.connectFourUpdate)
       }
   }
 }
