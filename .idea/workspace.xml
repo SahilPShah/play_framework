@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df8637c1-da3e-48e1-859f-51f82e31a9cf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/play_framework/app/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/app/controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/conf/routes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/controllers/ReverseHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/controllers/ReverseHomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/controllers/javascript/ReverseHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/controllers/javascript/ReverseHomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/router/Routes$$anonfun$routes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/router/Routes$$anonfun$routes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/router/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/router/Routes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/routes" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/classes/routes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/controllers/routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/controllers/routes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/router/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/router/Routes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/router/RoutesPrefix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/scala-2.12/routes/main/router/RoutesPrefix.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/streams/compile/compile/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/streams/compile/compile/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/streams/compile/compileIncSetup/$global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/streams/compile/compileIncSetup/$global/streams/inc_compile_2.12.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play_framework/target/streams/compile/playRoutes/$global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/target/streams/compile/playRoutes/$global/streams/op-cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/play_framework/app/controllers/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play_framework/app/controllers/ConnectFour.class" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/app/controllers/ConnectFour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play_framework/app/controllers/ConnectFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/play_framework/app/controllers/ConnectFour.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,16 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/play_framework/app/controllers/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#503#504#0" expanded="true" />
                 <element signature="e#555#556#0" expanded="true" />
@@ -48,6 +32,28 @@
                 <element signature="e#779#780#0" expanded="true" />
                 <element signature="e#825#826#0" expanded="true" />
                 <element signature="e#882#883#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/play_framework/app/controllers/GameManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/play_framework/app/controllers/ConnectFour.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+              <folding>
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/play_framework/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="29" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="15" selection-end-column="29" />
+              <caret line="15" column="29" selection-start-line="4" selection-start-column="2" selection-end-line="15" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -131,6 +137,9 @@
         <option value="$PROJECT_DIR$/play_framework/app/views/index.scala.html" />
         <option value="$PROJECT_DIR$/play_framework/app/controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/play_framework/conf/routes" />
+        <option value="$PROJECT_DIR$/play_framework/app/controllers/GameManager" />
+        <option value="$PROJECT_DIR$/play_framework/app/controllers/ConnectFour.java" />
+        <option value="$PROJECT_DIR$/play_framework/app/controllers/GameManager.java" />
       </list>
     </option>
   </component>
@@ -140,7 +149,9 @@
     <option name="width" value="1936" />
     <option name="height" value="1176" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -218,12 +229,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560368984472</updated>
       <workItem from="1560368987076" duration="5509000" />
-      <workItem from="1560431142705" duration="4537000" />
+      <workItem from="1560431142705" duration="10653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10046000" />
+    <option name="totallyTimeSpent" value="16162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -308,14 +319,14 @@
     <entry file="file://$PROJECT_DIR$/play_framework/conf/routes">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="15" selection-end-column="29" />
+          <caret line="15" column="29" selection-start-line="4" selection-start-column="2" selection-end-line="15" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/play_framework/app/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#503#504#0" expanded="true" />
             <element signature="e#555#556#0" expanded="true" />
@@ -326,6 +337,24 @@
             <element signature="e#825#826#0" expanded="true" />
             <element signature="e#882#883#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play_framework/app/controllers/ConnectFour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding>
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play_framework/app/controllers/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
         </state>
       </provider>
     </entry>
