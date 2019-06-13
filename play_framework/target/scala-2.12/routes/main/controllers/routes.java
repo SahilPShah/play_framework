@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/sahil.shah/Desktop/play_framework/play_framework/conf/routes
-// @DATE:Thu Jun 13 09:38:48 CDT 2019
+// @DATE:Thu Jun 13 09:55:10 CDT 2019
 
 package controllers;
 

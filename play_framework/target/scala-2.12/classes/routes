@@ -13,7 +13,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 POST /api/v1/connect-four                 controllers.HomeController.connectFourReset
 
 
-PUT /api/v1/connect-four                    controllers.HomeController.connectFourUpdate
+PUT /api/v1/connect-four{index}                   controllers.HomeController.connectFourUpdate(index)
 
 
 
