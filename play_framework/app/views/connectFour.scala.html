@@ -42,7 +42,7 @@
     </script>
 </head>
 <body>
-    <h1>Connect 4!</h1>
+    <h1 id="1">Connect 4!</h1>
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
@@ -108,31 +108,56 @@
 
     function col0()
     {
-        rv = {"col": 0}
+        rv = {"col": 0};
+        piecePlaced();
     }
     function col1()
     {
-        rv = {"col": 1}
+        rv = {"col": 1};
+        piecePlaced();
     }
     function col2()
     {
-        rv = {"col": 2}
+        rv = {"col": 2};
+        piecePlaced();
     }
     function col3()
     {
-        rv = {"col": 3}
+        rv = {"col": 3};
+        piecePlaced();
     }
     function col4()
     {
-        rv = {"col": 4}
+        rv = {"col": 4};
+        piecePlaced();
     }
     function col5()
     {
-        rv = {"col": 5}
+        rv = {"col": 5};
+        piecePlaced();
     }
     function col6()
     {
-        rv = {"col": 6}
+        rv = {"col": 6};
+        piecePlaced();
+    }
+
+    function piecePlaced()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200) 
+            {
+                alert(this.responseText);
+            }
+        };
+
+        xhttp.open("PUT", "http://localhost:9000/api/v1/connect-four", true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send(rv);
+        document.getElementById("1").innerHTML = xhttp.response();
+
     }
 
     function playChecker(playerData)
