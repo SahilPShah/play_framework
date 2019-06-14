@@ -150,14 +150,18 @@
             if (this.readyState == 4 && this.status == 200) 
             {
                 alert(this.responseText);
+                document.getElementById("1").innerHTML = xhttp.response();
+            }
+            else
+            {
+                alert(this.responseText);
             }
         };
 
         xhttp.open("PUT", "http://localhost:9000/api/v1/connect-four", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(rv);
-        document.getElementById("1").innerHTML = xhttp.response();
-
+        
     }
 
     function playChecker(playerData)
