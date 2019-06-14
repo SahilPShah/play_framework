@@ -144,19 +144,20 @@
             dataType: 'json',
             data: JSON.stringify(rv),
             contentType: 'application/json',
-            success: function()
+            success: function(response)
             {
-                alert('success');
+                //alert(response.col);
+                dropChecker(response);
             },
             error: function(response)
             {
                 alert('failure');
-                alert(this.response);
+                alert(response);
             }
         });
     }
 
-    function playChecker(playerData)
+    function dropChecker(playerData)
     {
         var index = playerData.row * 7 + playerData.col;
 

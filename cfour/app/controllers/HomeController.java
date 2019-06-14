@@ -3,6 +3,7 @@ package controllers;
 import com.sun.net.httpserver.HttpContext;
 import java.util.List;
 import com.fasterxml.jackson.databind.JsonNode;
+import play.libs.Json;
 import play.mvc.*;
 import views.html.*;
 
@@ -37,14 +38,22 @@ public class HomeController extends Controller {
 
     public Result connectFourUpdate(Http.Request request){
         JsonNode json = request.body().asJson();
+
         int col = json.get("col").asInt();
+        int row = c4.makeMove(col);
+        boolean isPlayerOne = c4.player;
 
+        //String rv = "{\"col\":  0, \"row\": 5, \"isPlayerOne\": true}";
 
-        c4.makeMove(col);
+        String colString = "{\"col\": " + Integer.toString(col) + ", ";
+        String rowString = "\"row\": " + Integer.toString(row) + ", ";
+        String isPlayerOneString = "\"isPlayerOne\": " + Boolean.toString(isPlayerOne) + "}";
 
-        return ok("{\"col\":  0}");
+        String rv = colString + rowString + isPlayerOneString;
+
+        //return ok("{\"col\":  0, \"row\": 5, \"isPlayerOne\": true}");
+        return ok(rv);
     }
-
 }
 
 class ConnectFour{
@@ -54,7 +63,7 @@ class ConnectFour{
     static final char P1_CHAR = 'R';
     static final char P2_CHAR = 'B';
     private char[][] board = new char[ROWS][COLUMNS];
-    private boolean player = true;                 //true for P1 and false for P2
+    public boolean player = true;                 //true for P1 and false for P2
     private int recentRow;
 
     private char winner;
@@ -90,33 +99,24 @@ class ConnectFour{
         return true;
     }
 
-    public String makeMove(int col){
+    public int makeMove(int col){
         System.out.println(col);
         if(this.colFull(col)) {
-            return "{}";
+            return -1;
         }
         for(int i = 1; i < ROWS; i++){
             if(board[i][col] != '*') {
                 board[i - 1][col] = player ? P1_CHAR : P2_CHAR;
                 player ^= true;
                 recentRow = i-1;
-                return "{\n" +
-                        "  \"col\" : col,\n" +
-                        "  \"row\": row,\n" +
-                        "  \"player\": player\n" +
-                        "}";
+                return recentRow;
             }
         }
         board[ROWS-1][col] =  player ? P1_CHAR : P2_CHAR;
         player ^= true;
 
         recentRow = ROWS-1;
-        String ret = "{\n" +
-                "  \"col\" : col,\n" +
-                "  \"row\": row,\n" +
-                "  \"player\": player\n" +
-                "}";
-        return ret;
+        return recentRow;
     }
 
     public void checkWinnerVertical(){
