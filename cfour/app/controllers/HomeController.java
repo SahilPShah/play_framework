@@ -100,7 +100,11 @@ class ConnectFour{
                 board[i - 1][col] = player ? P1_CHAR : P2_CHAR;
                 player ^= true;
                 recentRow = i-1;
-                return "{}";
+                return "{\n" +
+                        "  \"col\" : col,\n" +
+                        "  \"row\": row,\n" +
+                        "  \"player\": player\n" +
+                        "}";
             }
         }
         board[ROWS-1][col] =  player ? P1_CHAR : P2_CHAR;
