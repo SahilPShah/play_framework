@@ -38,11 +38,10 @@ public class HomeController extends Controller {
         JsonNode json = request.body().asJson();
         int col = json.get("col").asInt();
 
-        System.out.println(col);
 
         c4.makeMove(col);
 
-        return ok(views.html.update.render("yui"));
+        return ok("ihojipoio9");
     }
 
 }
