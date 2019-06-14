@@ -4,7 +4,7 @@
 		module="play-java-hello-world-web_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190612144640"
+		publication="20190614111529"
 	>
 		<description>
 		play-java-hello-world-web

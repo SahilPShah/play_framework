@@ -1,0 +1,173 @@
+
+
+@(message:String)
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connect Four </title>
+
+    <style>
+        .dot 
+        {
+            height: 50px;
+            width: 50px;
+            background-color: #bbb;
+            /* background-color: red; */
+            /* background-color: black; */
+            border-radius: 50%;
+            display: inline-block;
+        }
+        button
+        {
+            width: 50px;
+            height: 25px;
+        }
+        body
+        {
+            text-align: center;
+        }
+    </style>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <h1 id="1">Connect 4!</h1>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <br>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <br>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <br>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <br>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <br>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <br>
+    <br>
+    <h3>Select your Column</h3>
+    <button onclick=col0()></button>
+    <button onclick=col1()></button>
+    <button onclick=col2()></button>
+    <button onclick=col3()></button>
+    <button onclick=col4()></button>
+    <button onclick=col5()></button>
+    <button onclick=col6()></button>
+</body>
+
+<script>
+    var dots = document.getElementsByClassName("dot");
+    var rv;
+
+    function col0()
+    {
+        rv = {"col": 0};
+        piecePlaced();
+    }
+    function col1()
+    {
+        rv = {"col": 1};
+        piecePlaced();
+    }
+    function col2()
+    {
+        rv = {"col": 2};
+        piecePlaced();
+    }
+    function col3()
+    {
+        rv = {"col": 3};
+        piecePlaced();
+    }
+    function col4()
+    {
+        rv = {"col": 4};
+        piecePlaced();
+    }
+    function col5()
+    {
+        rv = {"col": 5};
+        piecePlaced();
+    }
+    function col6()
+    {
+        rv = {"col": 6};
+        piecePlaced();
+    }
+
+    function piecePlaced()
+    {
+        $.ajax({
+            url: 'http://localhost:9000/api/v1/connect-four',
+            type: 'PUT',
+            dataType: 'json',
+            data: JSON.stringify(rv),
+            contentType: 'application/json',
+            success: function()
+            {
+                alert('success');
+            },
+            error: function(response)
+            {
+                alert('failure');
+                alert(this.response);
+            }
+        });
+    }
+
+    function playChecker(playerData)
+    {
+        var index = playerData.row * 7 + playerData.col;
+
+        if(playerData.isPlayerOne)
+        {
+            dots[index].style.backgroundColor = 'red';
+        }
+        else
+        {
+            dots[index].style.backgroundColor = 'black';
+        }
+    }
+</script>
+</html>
