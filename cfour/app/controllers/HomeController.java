@@ -41,12 +41,15 @@ public class HomeController extends Controller {
 
         int col = json.get("col").asInt();
         int row = c4.makeMove(col);
+        int winInt = c4.checkWinner();
         boolean isPlayerOne = c4.player;
+
 
         //String rv = "{\"col\":  0, \"row\": 5, \"isPlayerOne\": true}";
 
         String colString = "{\"col\": " + Integer.toString(col) + ", ";
         String rowString = "\"row\": " + Integer.toString(row) + ", ";
+        String winStr = "\"winner\": " + Integer.toString(winInt) + ", ";
         String isPlayerOneString = "\"isPlayerOne\": " + Boolean.toString(isPlayerOne) + "}";
 
         String rv = colString + rowString + isPlayerOneString;
@@ -181,7 +184,7 @@ class ConnectFour{
         }
     }
 
-    public boolean checkWinner(){
+    public int checkWinner(){
         checkWinnerVertical();
         checkWinnerHorz();
         checkWinnerUpperLeftDiag();
@@ -189,14 +192,14 @@ class ConnectFour{
 
         if (winner == P1_CHAR){
             System.out.println("The winner is player 1!");
-            return true;
+            return 1;
         }
         else if (winner == P2_CHAR){
             System.out.println("The winner is player 2!");
-            return true;
+            return 2;
         }
 
-        return false;
+        return 0;
     }
 
     public void printBoard(){

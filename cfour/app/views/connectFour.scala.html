@@ -159,15 +159,27 @@
 
     function dropChecker(playerData)
     {
-        var index = playerData.row * 7 + playerData.col;
+        if(playerData.row != -1)
+        {
+            var index = playerData.row * 7 + playerData.col;
 
-        if(playerData.isPlayerOne)
-        {
-            dots[index].style.backgroundColor = 'red';
-        }
-        else
-        {
-            dots[index].style.backgroundColor = 'black';
+            if(playerData.isPlayerOne)
+            {
+                dots[index].style.backgroundColor = 'red';
+            }
+            else
+            {
+                dots[index].style.backgroundColor = 'black';
+            }
+
+            if(playerData.winStr == 1)
+            {
+                document.getElementById("1").innerHTML = "Player 1 wins!";
+            }
+            else if(playerData.winStr == 2)
+            {
+                document.getElementById("1").innerHTML = "Player 2 wins!";
+            }
         }
     }
 </script>
