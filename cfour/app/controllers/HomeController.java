@@ -48,7 +48,7 @@ public class HomeController extends Controller {
 
         String colString = "{\"col\": " + Integer.toString(col) + ", ";
         String rowString = "\"row\": " + Integer.toString(row) + ", ";
-        String winStr = "\"winner\": " + Integer.toString(winInt) + ", ";
+        String winStr = "\"winStr\": " + Integer.toString(winInt) + ", ";
         String isPlayerOneString = "\"isPlayerOne\": " + Boolean.toString(isPlayerOne) + "}";
 
         String rv = colString + rowString + winStr + isPlayerOneString;
