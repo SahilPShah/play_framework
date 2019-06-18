@@ -33,7 +33,8 @@ public class HomeController extends Controller {
     }
 
     public Result connectFourReset(){
-        return ok(connectFour.render("SHOW NEW BOARD"));
+        c4.resetBoard();
+        return ok();
     }
 
     public Result connectFourUpdate(Http.Request request){
@@ -44,8 +45,6 @@ public class HomeController extends Controller {
         int winInt = c4.checkWinner();
         boolean isPlayerOne = c4.player;
 
-        //String rv = "{\"col\":  0, \"row\": 5, \"isPlayerOne\": true}";
-
         String colString = "{\"col\": " + Integer.toString(col) + ", ";
         String rowString = "\"row\": " + Integer.toString(row) + ", ";
         String winStr = "\"winStr\": " + Integer.toString(winInt) + ", ";
@@ -53,7 +52,6 @@ public class HomeController extends Controller {
 
         String rv = colString + rowString + winStr + isPlayerOneString;
 
-        //return ok("{\"col\":  0, \"row\": 5, \"isPlayerOne\": true}");
         return ok(rv);
     }
 }
@@ -99,6 +97,16 @@ class ConnectFour{
             }
         }
         return true;
+    }
+
+    public void resetBoard(){
+        player = true;
+        winner = '*';
+        for(int r = 0; r < ROWS; r++){
+            for(int c = 0; c < COLUMNS; c++){
+                board[r][c] = '*';
+            }
+        }
     }
 
     public int makeMove(int col){

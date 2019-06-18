@@ -17,12 +17,10 @@
             height: 50px;
             width: 50px;
             background-color: #bbb;
-            /* background-color: red; */
-            /* background-color: black; */
             border-radius: 50%;
             display: inline-block;
         }
-        button
+        .dropButton
         {
             width: 50px;
             height: 25px;
@@ -83,17 +81,20 @@
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
-    <span class="dot"></span>
+    <span class="dot" id="thedot"></span>
     <br>
     <br>
     <h3>Select your Column</h3>
-    <button onclick=col0()></button>
-    <button onclick=col1()></button>
-    <button onclick=col2()></button>
-    <button onclick=col3()></button>
-    <button onclick=col4()></button>
-    <button onclick=col5()></button>
-    <button onclick=col6()></button>
+    <button class="dropButton" onclick=col0()></button>
+    <button class="dropButton" onclick=col1()></button>
+    <button class="dropButton" onclick=col2()></button>
+    <button class="dropButton" onclick=col3()></button>
+    <button class="dropButton" onclick=col4()></button>
+    <button class="dropButton" onclick=col5()></button>
+    <button class="dropButton" onclick=col6()></button>
+    <br>
+    <br>
+    <button onclick=resetGame()>Reset Game</button>
 </body>
 
 <script>
@@ -136,6 +137,26 @@
         piecePlaced();
     }
 
+    function resetGame()
+    {
+        $.ajax({
+            url: 'http://localhost:9000/api/v1/connect-four',
+            type: 'POST',
+            success: function(response)
+            {
+                for(var i = 0; i < dots.length; i++)
+                {
+                    dots[i].style.backgroundColor = '#bbb';
+                }
+                document.getElementById('1').innerHTML = 'Connect 4!'
+            },
+            error: function(response)
+            {
+                alert('failure');
+            }
+        });
+    }
+
     function piecePlaced()
     {
         $.ajax({
@@ -146,7 +167,6 @@
             contentType: 'application/json',
             success: function(response)
             {
-                //alert(response.col);
                 dropChecker(response);
             },
             error: function(response)
