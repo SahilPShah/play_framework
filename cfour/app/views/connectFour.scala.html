@@ -172,11 +172,13 @@
                 dots[index].style.backgroundColor = 'black';
             }
 
-            if(playerData.winStr == 1)
+            console.log(playerData.winStr);
+
+            if(playerData.winStr === 1)
             {
                 document.getElementById("1").innerHTML = "Player 1 wins!";
             }
-            else if(playerData.winStr == 2)
+            else if(playerData.winStr === 2)
             {
                 document.getElementById("1").innerHTML = "Player 2 wins!";
             }

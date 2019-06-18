@@ -44,15 +44,14 @@ public class HomeController extends Controller {
         int winInt = c4.checkWinner();
         boolean isPlayerOne = c4.player;
 
-
         //String rv = "{\"col\":  0, \"row\": 5, \"isPlayerOne\": true}";
 
         String colString = "{\"col\": " + Integer.toString(col) + ", ";
         String rowString = "\"row\": " + Integer.toString(row) + ", ";
-        String winStr = "\"winner\": " + Integer.toString(winInt) + ", ";
+        String winStr = "\"winStr\": " + Integer.toString(winInt) + ", ";
         String isPlayerOneString = "\"isPlayerOne\": " + Boolean.toString(isPlayerOne) + "}";
 
-        String rv = colString + rowString + isPlayerOneString;
+        String rv = colString + rowString + winStr + isPlayerOneString;
 
         //return ok("{\"col\":  0, \"row\": 5, \"isPlayerOne\": true}");
         return ok(rv);
