@@ -171,7 +171,7 @@ class ConnectFour{
     }
 
     public void checkWinnerUpperRightDiag(){
-        for (int row = 0; row < 4; row++){
+        for (int row = 0; row < 3; row++){
             for (int col = COLUMNS-1; col > 2; col-- ){
                 char piece = board[row][col];
                 if (piece != '*' && piece == board[row+1][col-1] &&
