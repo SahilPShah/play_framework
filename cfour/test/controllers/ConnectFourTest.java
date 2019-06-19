@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConnectFourTest {
     @Test
-    void name() {
-        assertTrue(true);
+    void test_colFull() {
     }
 }
