@@ -142,6 +142,9 @@
         $.ajax({
             url: 'http://localhost:9000/api/v1/connect-four',
             type: 'POST',
+            dataType: 'json',
+            data: JSON.stringify(rv),
+            contentType: 'application/json',
             success: function(response)
             {
                 for(var i = 0; i < dots.length; i++)
@@ -149,6 +152,7 @@
                     dots[i].style.backgroundColor = '#bbb';
                 }
                 document.getElementById('1').innerHTML = 'Connect 4!'
+                enableAllButtons();
             },
             error: function(response)
             {
@@ -181,6 +185,7 @@
     {
         if(playerData.row != -1)
         {
+            //drop the checker
             var index = playerData.row * 7 + playerData.col;
 
             if(playerData.isPlayerOne)
@@ -192,17 +197,46 @@
                 dots[index].style.backgroundColor = 'black';
             }
 
-            console.log(playerData.winStr);
+            //disable button
+            if(playerData.colFull)
+            {
+                var col = playerData.col;
+                var buttons = document.getElementsByClassName("dropButton");
+                buttons[col].disabled = true;
+            }
 
             if(playerData.winStr === 1)
             {
                 document.getElementById("1").innerHTML = "Player 1 wins!";
+                disableAllButtons();
             }
             else if(playerData.winStr === 2)
             {
                 document.getElementById("1").innerHTML = "Player 2 wins!";
+                disableAllButtons();
             }
         }
     }
+
+    function disableAllButtons()
+    {
+        var buttons = document.getElementsByClassName("dropButton");
+
+        for(var i = 0; i < buttons.length; i++)
+        {
+            buttons[i].disabled = true;
+        }
+    }
+
+    function enableAllButtons()
+    {
+        var buttons = document.getElementsByClassName("dropButton");
+
+        for(var i = 0; i < buttons.length; i++)
+        {
+            buttons[i].disabled = false;
+        }
+    }
+
 </script>
 </html>

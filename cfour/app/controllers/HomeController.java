@@ -42,15 +42,17 @@ public class HomeController extends Controller {
 
         int col = json.get("col").asInt();
         int row = c4.makeMove(col);
+        boolean colFull = c4.colFull(col);
         int winInt = c4.checkWinner();
         boolean isPlayerOne = c4.player;
 
         String colString = "{\"col\": " + Integer.toString(col) + ", ";
         String rowString = "\"row\": " + Integer.toString(row) + ", ";
+        String colFullString = "\"colFull\": " + Boolean.toString(colFull) + ", ";
         String winStr = "\"winStr\": " + Integer.toString(winInt) + ", ";
         String isPlayerOneString = "\"isPlayerOne\": " + Boolean.toString(isPlayerOne) + "}";
 
-        String rv = colString + rowString + winStr + isPlayerOneString;
+        String rv = colString + rowString + colFullString + winStr + isPlayerOneString;
 
         return ok(rv);
     }
@@ -81,7 +83,7 @@ class ConnectFour{
         winner = '*';
     }
 
-    private boolean colFull(int col){
+    public boolean colFull(int col){
         for(int i = 0; i < ROWS; i++){
             if (board[i][col] == '*'){
                 return false;
