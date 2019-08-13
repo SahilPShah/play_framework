@@ -139,26 +139,7 @@
 
     function resetGame()
     {
-        $.ajax({
-            url: 'http://localhost:9000/api/v1/connect-four',
-            type: 'POST',
-            dataType: 'json',
-            data: JSON.stringify(rv),
-            contentType: 'application/json',
-            success: function(response)
-            {
-                for(var i = 0; i < dots.length; i++)
-                {
-                    dots[i].style.backgroundColor = '#bbb';
-                }
-                document.getElementById('1').innerHTML = 'Connect 4!'
-                enableAllButtons();
-            },
-            error: function(response)
-            {
-                alert('failure');
-            }
-        });
+        location.reload();
     }
 
     function piecePlaced()

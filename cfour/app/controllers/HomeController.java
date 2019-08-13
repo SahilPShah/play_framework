@@ -92,15 +92,6 @@ class ConnectFour{
         return true;
     }
 
-    public boolean boardStatus(){
-        for (int i = 0; i < COLUMNS; i++){
-            if(!this.colFull(i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     public void resetBoard(){
         player = true;
         winner = '*';
@@ -112,7 +103,6 @@ class ConnectFour{
     }
 
     public int makeMove(int col){
-        System.out.println(col);
         if(this.colFull(col)) {
             return -1;
         }
@@ -200,24 +190,12 @@ class ConnectFour{
         checkWinnerUpperRightDiag();
 
         if (winner == P1_CHAR){
-            System.out.println("The winner is player 1!");
             return 1;
         }
         else if (winner == P2_CHAR){
-            System.out.println("The winner is player 2!");
             return 2;
         }
 
         return 0;
-    }
-
-    public void printBoard(){
-        for(int i = 0; i < ROWS; i++){
-            for(int j = 0; j < COLUMNS; j++){
-                System.out.print(board[i][j]);
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
     }
 }
